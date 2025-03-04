@@ -134,5 +134,7 @@ void loop() {
 ```
 
 7\. Upload the code
+
 8\. Change the state from on to off using the change/ON url.
+
 9\. Play around with this and see if you can get the arduino to blink as a challenge.
