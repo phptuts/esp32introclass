@@ -4,9 +4,10 @@
 
 - [Install Arduino IDE](https://www.arduino.cc/en/software)
 - Install ESP-32 Boards
-    - ![ExampleImage](./install-expressif.png)
+  - ![ExampleImage](./install-expressif.png)
 - [Install Nodejs](https://nodejs.org/en)
 - Install local tunnel
+
 ```bash
 npm install -g localtunnel
 ```
@@ -15,17 +16,16 @@ npm install -g localtunnel
 
 In Tools > Board Settings, set:
 
-Setting	Value
-Upload Speed	115200
-CPU Frequency	240 MHz (WiFi/BT)
-Flash Frequency	80MHz
-Flash Mode	QIO
-Flash Size	4MB (32Mb)
-Partition Scheme	Default 4MB with spiffs
-PSRAM	Disabled (unless your board has it)
+Setting Value
+Upload Speed 115200
+CPU Frequency 240 MHz (WiFi/BT)
+Flash Frequency 80MHz
+Flash Mode QIO
+Flash Size 4MB (32Mb)
+Partition Scheme Default 4MB with spiffs
+PSRAM Disabled (unless your board has it)
 
-
-## Blink the Internal LED.  
+## Blink the Internal LED.
 
 ```cpp
 #define LED_PIN 2  // Built-in LED or external LED on GPIO2
@@ -42,26 +42,25 @@ void loop() {
 }
 ```
 
-
 ## Create a nodejs server
 
 1. Type in the terminal npm init -y
 2. Create your app.js file.
 
 ```js
-const express = require('express');
+const express = require("express");
 const app = express();
 const port = 3000;
 var state = "OFF";
 // Define a GET endpoint
-app.get('/', (req, res) => {
-  console.log(state, 'Sent State');  
+app.get("/", (req, res) => {
+  console.log(state, "Sent State");
   res.send(state);
 });
 
-app.get('/change/:on', (req, res) => {
-    state = req.params.on == "ON" ? "ON" : "OFF";
-    res.send(state);
+app.get("/change/:on", (req, res) => {
+  state = req.params.on == "ON" ? "ON" : "OFF";
+  res.send(state);
 });
 // Start the server
 app.listen(port, () => {
