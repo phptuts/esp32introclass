@@ -6,6 +6,7 @@
 - Install ESP-32 Boards
   - ![ExampleImage](./install-expressif.png)
 - [Install Nodejs](https://nodejs.org/en)
+- [Visual Studio Code](https://code.visualstudio.com/)
 - Install local tunnel
 
 ```bash
